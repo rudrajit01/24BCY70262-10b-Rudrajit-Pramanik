@@ -1,0 +1,239 @@
+/* Login.css - Glassmorphism Login Screen with Floating Shapes */
+
+/* Main container with animated gradient background */
+.login-screen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Vibrant multi-color gradient */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Background gradient movement animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating shapes container */
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none; /* Prevents shapes from blocking clicks */
+}
+
+/* Individual floating bubble shapes */
+.background-shapes .shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  bottom: -150px;
+  animation: floatUp 20s infinite linear;
+}
+
+/* Different sizes and positions for each bubble */
+.shape:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.shape:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  left: 25%;
+  animation-delay: 4s;
+  animation-duration: 22s;
+}
+
+.shape:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 45%;
+  animation-delay: 2s;
+  animation-duration: 15s;
+}
+
+.shape:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  left: 70%;
+  animation-delay: 8s;
+  animation-duration: 25s;
+}
+
+.shape:nth-child(5) {
+  width: 100px;
+  height: 100px;
+  left: 85%;
+  animation-delay: 1s;
+  animation-duration: 20s;
+}
+
+.shape:nth-child(6) {
+  width: 120px;
+  height: 120px;
+  left: 55%;
+  animation-delay: 12s;
+  animation-duration: 28s;
+}
+
+/* Floating animation for bubbles */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Glassmorphism Login Card */
+.login-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 45px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+/* Login header styles */
+.login-header h2 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: #0055ff;
+}
+
+.login-header p {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 30px;
+}
+
+/* Input group styles */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 8px;
+  padding-left: 5px;
+  color: rgba(0, 100, 240, 0.9);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  color: #ff0000;
+  font-size: 15px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: rgba(21, 20, 20, 0.6);
+}
+
+.input-group input:focus {
+  background: rgba(0, 65, 69, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Login button styles */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #e73c7e;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  background: #f8f9fa;
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer links */
+.login-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.login-footer a {
+  color: #484b7d;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 25px;
+    margin: 20px;
+    max-width: 90%;
+  }
+  
+  .login-header h2 {
+    font-size: 24px;
+  }
+  
+  .input-group input {
+    padding: 12px 16px;
+  }
+  
+  .login-btn {
+    padding: 12px;
+  }
+}
