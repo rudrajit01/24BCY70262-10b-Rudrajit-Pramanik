@@ -12,8 +12,9 @@ export default function NavUser() {
   const { user, status, logout } = useAuthStore();
 
   if (status === 'checking') {
-    return <Spinner size="sm" />;
+    return <Spinner className="size-4" />;
   }
+
 
   if (!user) {
     return null;

@@ -29,7 +29,8 @@ export default function AppHeader() {
               <Link href="/my-posts">
                 <Button variant="ghost">My Posts</Button>
               </Link>
-              <NavUser user={user} />
+              <NavUser />
+
             </>
           ) : (
             <>
